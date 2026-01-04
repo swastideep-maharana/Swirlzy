@@ -1,8 +1,17 @@
-# Swirlzy - Premium Bakery Landing Page
+# Swirlzy - Premium D2C Bakery Landing Page
 
-A playful, conversion-optimized landing page for Swirlzy, a premium bakery brand. Built with React, Tailwind CSS, Framer Motion, and Zustand.
+Swirlzy is a modern D2C landing page for food and bakery brands, built using React and Tailwind CSS. It focuses on visual storytelling, product discovery, and conversion-driven design with smooth interactions.
 
-## Getting Started
+## 🚀 Key Features
+
+- **Conversion-Driven Hero**: Clear CTA paths and social proof signals to drive sales.
+- **Visual Storytelling**: Premium aesthetics with smooth animations and high-quality imagery.
+- **Responsive Design**: Mobile-first approach for an optimal shopping experience.
+- **Micro-interactions**: Enhanced UX with Framer Motion animations.
+- **Cart System**: Fully functional cart state management with Zustand.
+- **Modern Tech Stack**: Built with React 18, TypeScript, Vite, and Tailwind CSS.
+
+## 🛠️ Getting Started
 
 1. **Install Dependencies**
    ```bash
@@ -19,15 +28,7 @@ A playful, conversion-optimized landing page for Swirlzy, a premium bakery brand
    npm run build
    ```
 
-## Key Features
-
-- **Responsive Design**: Fully responsive layout that looks great on all devices.
-- **Animations**: Smooth transitions and micro-interactions using Framer Motion.
-- **Cart System**: Functional cart mock-up using Zustand for state management.
-- **Modern Styling**: Styled with Tailwind CSS using a custom pastel color palette.
-- **Data Mocking**: Mock data structure for products and cart items.
-
-## Technologies
+## 🎨 Technologies
 
 - React 18+
 - TypeScript
@@ -36,4 +37,3 @@ A playful, conversion-optimized landing page for Swirlzy, a premium bakery brand
 - Framer Motion
 - Zustand
 - Lucide React (Icons)
-"# Swirlzy" 
