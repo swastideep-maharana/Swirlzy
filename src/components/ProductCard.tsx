@@ -1,10 +1,12 @@
 import { useRef } from 'react';
 import { Product, useCartStore } from '@/lib/store';
+import { useToastStore } from '@/lib/toast';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Plus, Star } from 'lucide-react';
 
 export const ProductCard = ({ product }: { product: Product }) => {
   const addItem = useCartStore(s => s.addItem);
+  const addToast = useToastStore(s => s.addToast);
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);
@@ -83,6 +85,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
           onClick={(e) => {
             e.stopPropagation();
             addItem(product);
+            addToast(`Added ${product.name} to your cart! 🍩`);
           }}
           className="bg-darkText text-white p-3 rounded-full hover:bg-accent transition-colors shadow-lg flex items-center justify-center group/btn hover:shadow-accent/40"
         >

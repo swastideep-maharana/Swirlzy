@@ -6,11 +6,21 @@ import { useCartStore } from '@/lib/store';
 import { motion } from 'framer-motion';
 import { Star, ArrowRight, Heart } from 'lucide-react';
 
+import { ToastContainer } from '@/components/ToastContainer';
+import { useToastStore } from '@/lib/toast';
+
 function App() {
   const addItem = useCartStore(s => s.addItem);
+  const addToast = useToastStore(s => s.addToast);
+
+  const handleAddToCart = (product: any) => {
+    addItem(product);
+    addToast(`Added ${product.name} to your cart! 🥐`);
+  };
 
   return (
-    <div className="min-h-screen bg-cream/30 selection:bg-accent selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-cream/30 selection:bg-accent selection:text-white overflow-x-hidden bg-noise">
+      <ToastContainer />
       <Navbar />
       <CartSidebar />
       
@@ -79,7 +89,7 @@ function App() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.8 }}
                     className="absolute -bottom-6 -left-6 bg-white p-4 rounded-3xl shadow-xl flex items-center gap-4 max-w-xs cursor-pointer hover:scale-105 transition-transform"
-                    onClick={() => addItem(HERO_PRODUCT)}
+                    onClick={() => handleAddToCart(HERO_PRODUCT)}
                   >
                      <div className="bg-yellow-100 p-3.5 rounded-full">
                         <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
@@ -156,7 +166,7 @@ function App() {
                      </div>
                   </div>
                   <motion.button 
-                     onClick={() => addItem(DAILY_SPECIAL)}
+                     onClick={() => handleAddToCart(DAILY_SPECIAL)}
                      whileHover={{ scale: 1.05 }}
                      whileTap={{ scale: 0.95 }}
                      className="bg-darkText text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-secondaryAccent transition-colors shadow-2xl shadow-secondaryAccent/30 flex items-center gap-3"

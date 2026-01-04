@@ -1,4 +1,4 @@
-import { ShoppingBag, Menu } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import { useCartStore } from '@/lib/store';
 import { motion } from 'framer-motion';
 
