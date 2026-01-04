@@ -8,8 +8,13 @@ export const ProductCard = ({ product }: { product: Product }) => {
   const addToast = useToastStore(s => s.addToast);
 
   return (
-    <div
-      className="bg-white rounded-3xl p-4 shadow-soft hover:shadow-xl transition-all duration-300 flex flex-col gap-4 group border border-transparent hover:border-pastelPink/30 relative z-0"
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.5 }}
+      className="bg-white rounded-3xl p-4 shadow-soft hover:shadow-xl transition-shadow duration-300 flex flex-col gap-4 group border border-transparent hover:border-pastelPink/30 relative z-0"
     >
       <div 
         className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream shadow-inner"
@@ -17,7 +22,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         <img 
           src={product.image} 
           alt={product.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1 text-xs font-bold text-darkText shadow-sm">
           <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
@@ -38,6 +43,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         <span className="font-playful text-2xl text-accent font-bold">${product.price.toFixed(2)}</span>
         <motion.button 
           whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
           onClick={(e) => {
             e.stopPropagation();
             addItem(product);
@@ -48,6 +54,6 @@ export const ProductCard = ({ product }: { product: Product }) => {
           <Plus className="w-5 h-5 group-hover/btn:rotate-90 transition-transform" />
         </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };

@@ -101,29 +101,35 @@ function App() {
                 className="relative lg:h-full flex items-center justify-center p-8"
              >
                 <div className="relative z-10 w-full max-w-lg">
-                   <div className="bg-white/40 backdrop-blur-xl rounded-[2.5rem] p-6 border border-white/60 shadow-soft">
+                   <motion.div 
+                     animate={{ y: [0, -15, 0] }}
+                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                     className="bg-white/40 backdrop-blur-xl rounded-[2.5rem] p-6 border border-white/60 shadow-soft"
+                   >
                      <img 
                        src={HERO_PRODUCT.image} 
                        alt="Hero Cake" 
                        className="w-full aspect-square object-cover rounded-[2rem] shadow-lg"
                      />
-                   </div>
+                   </motion.div>
                    
-                   <div 
-                     className="absolute -bottom-6 -left-6 bg-white p-4 rounded-3xl shadow-xl flex items-center gap-4 max-w-xs cursor-pointer hover:scale-[1.02] transition-transform"
-                     onClick={() => handleAddToCart(HERO_PRODUCT)}
-                   >
-                      <div className="bg-yellow-100 p-3.5 rounded-full">
-                         <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
-                      </div>
-                      <div className="pr-4">
-                         <p className="font-bold text-darkText text-lg leading-tight">Best Seller</p>
-                         <p className="text-sm text-gray-500">Berry Bliss Swirl</p>
-                      </div>
-                      <div className="bg-darkText text-white w-10 h-10 rounded-full flex items-center justify-center ml-auto">
-                         <ArrowRight className="w-5 h-5 -rotate-45" />
-                      </div>
-                   </div>
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="absolute -bottom-6 -left-6 bg-white p-4 rounded-3xl shadow-xl flex items-center gap-4 max-w-xs cursor-pointer transition-transform"
+                      onClick={() => handleAddToCart(HERO_PRODUCT)}
+                    >
+                       <div className="bg-yellow-100 p-3.5 rounded-full">
+                          <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+                       </div>
+                       <div className="pr-4">
+                          <p className="font-bold text-darkText text-lg leading-tight">Best Seller</p>
+                          <p className="text-sm text-gray-500">Berry Bliss Swirl</p>
+                       </div>
+                       <div className="bg-darkText text-white w-10 h-10 rounded-full flex items-center justify-center ml-auto">
+                          <ArrowRight className="w-5 h-5 -rotate-45" />
+                       </div>
+                    </motion.div>
                 </div>
              </motion.div>
           </div>
@@ -195,6 +201,8 @@ function App() {
                    initial={{ opacity: 0 }}
                    whileInView={{ opacity: 1 }}
                    viewport={{ once: true }}
+                   animate={{ y: [0, -15, 0] }}
+                   transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                    className="relative z-10 w-full max-w-md"
                 >
                    <div className="bg-white p-4 rounded-[3rem] shadow-soft">
@@ -221,9 +229,13 @@ function App() {
                    { text: "Best desserts I’ve tried online. The quality is unmatched.", name: "John D.", color: "bg-pastelGreen/20" },
                    { text: "My kids loved the donuts. We will definitely order again.", name: "Emily R.", color: "bg-pastelBlue/20" }
                  ].map((review, i) => (
-                    <div 
+                    <motion.div 
                       key={i}
-                      className={`${review.color} p-8 rounded-[2rem] text-left relative hover:shadow-lg transition-all`}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      whileHover={{ y: -8 }}
+                      className={`${review.color} p-8 rounded-[2rem] text-left relative transition-all duration-300 hover:shadow-lg`}
                     >
                        <div className="flex gap-1 text-yellow-500 mb-6">
                           {[...Array(5)].map((_, idx) => <Star key={idx} className="w-5 h-5 fill-current" />)}
@@ -246,7 +258,7 @@ function App() {
                              <p className="text-sm text-gray-500 font-medium">Verified Sweet Tooth</p>
                           </div>
                        </div>
-                    </div>
+                    </motion.div>
                  ))}
               </div>
           </div>

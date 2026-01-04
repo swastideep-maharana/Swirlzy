@@ -3,11 +3,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 export const ParallaxBackground = () => {
   const { scrollYProgress } = useScroll();
   
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 90]);
-  const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -45]);
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -90]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
