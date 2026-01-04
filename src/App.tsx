@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import { Star, ArrowRight, Heart } from 'lucide-react';
 
 import { ToastContainer } from '@/components/ToastContainer';
-import { CustomCursor } from '@/components/CustomCursor';
 import { ParallaxBackground } from '@/components/ParallaxBackground';
 import { useToastStore } from '@/lib/toast';
 
@@ -21,8 +20,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-cream/30 selection:bg-accent selection:text-white overflow-x-hidden bg-noise cursor-none">
-      <CustomCursor />
+    <div className="min-h-screen bg-cream/30 selection:bg-accent selection:text-white overflow-x-hidden bg-noise">
       <ParallaxBackground />
       <ToastContainer />
       <Navbar />
