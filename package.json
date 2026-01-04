@@ -1,7 +1,9 @@
 {
   "name": "swirlzy",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Premium Bakery Landing Page 2026",
+  "author": "Swirlzy Team",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -211,7 +211,15 @@ function App() {
                       <p className="text-darkText/80 mb-8 text-xl italic font-medium">"{review.text}"</p>
                       <div className="flex items-center gap-4">
                          <div className="w-12 h-12 bg-white rounded-full overflow-hidden p-1 shadow-sm">
-                            <img src={`https://i.pravatar.cc/150?img=${i + 20}`} alt="User" className="w-full h-full rounded-full" />
+                            <img 
+                                src={[
+                                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80", 
+                                  "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=200&q=80",
+                                  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80"
+                                ][i]} 
+                                alt="User" 
+                                className="w-full h-full rounded-full object-cover" 
+                             />
                          </div>
                          <div>
                             <p className="font-bold text-darkText text-lg">{review.name}</p>
@@ -231,7 +239,7 @@ function App() {
             <a href="#" className="hover:text-white transition-colors">Twitter</a>
             <a href="#" className="hover:text-white transition-colors">Facebook</a>
          </div>
-         <p className="text-white/40">© 2024 Swirlzy Bakery. Baked with love.</p>
+         <p className="text-white/40">© 2026 Swirlzy Bakery. Baked with love.</p>
       </footer>
     </div>
   )
